@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árboles Nativos de Chile por Región</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado / Hero -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Flora Nativa de Chile</h1>
+            <p>Explora y consulta las especies arbóreas nativas según la región de nuestro país</p>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container">
+        <!-- Sección de Filtros / Consulta -->
+        <section class="search-section">
+            <h2>Consulta de Especies por Región</h2>
+            <p>Selecciona una región para consultar la lista de árboles nativos y sus características:</p>
+            
+            <div class="filter-box">
+                <div class="form-group">
+                    <label for="region-select">Seleccionar Región:</label>
+                    <select id="region-select" class="dropdown">
+                        <option value="">-- Elige una región --</option>
+                        <option value="xv">Arica y Parinacota</option>
+                        <option value="i">Tarapacá</option>
+                        <option value="ii">Antofagasta</option>
+                        <option value="iii">Atacama</option>
+                        <option value="iv">Coquimbo</option>
+                        <option value="v">Valparaíso</option>
+                        <option value="rm">Región Metropolitana</option>
+                        <option value="vi">O'Higgins</option>
+                        <option value="vii">Maule</option>
+                        <option value="xvi">Ñuble</option>
+                        <option value="viii">Biobío</option>
+                        <option value="ix">La Araucanía</option>
+                        <option value="xiv">Los Ríos</option>
+                        <option value="x">Los Lagos</option>
+                        <option value="xi">Aysén del G. Carlos Ibáñez del Campo</option>
+                        <option value="xii">Magallanes y de la Antártica Chilena</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="habitat-select">Filtrar por Zona o Hábitat:</label>
+                    <select id="habitat-select" class="dropdown" disabled>
+                        <option value="todos">Todas las zonas</option>
+                        <option value="cordillera">Cordillera / Alta Montaña</option>
+                        <option value="valle">Valle Central / Matorral</option>
+                        <option value="costa">Zona Costera / Bosque Húmedo</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados de la Consulta -->
+        <section id="results-section" class="results-container">
+            <div id="placeholder-message" class="placeholder-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M2 21h20"/><path d="M8.5 10A1.5 1.5 0 0 1 7 8.5C7 7 12 2 12 2s5 5 5 6.5A1.5 1.5 0 0 1 15.5 10"/><path d="M12 22v-6"/></svg>
+                <p>Por favor, selecciona una región en el menú desplegable superior para desplegar la información.</p>
+            </div>
+            
+            <div id="loading-spinner" class="spinner hidden"></div>
+            
+            <div id="trees-grid" class="trees-grid hidden"></div>
+        </section>
+    </main>
+
+    <!-- Modal de Detalles del Árbol -->
+    <div id="tree-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Guía de Árboles Nativos de Chile. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
